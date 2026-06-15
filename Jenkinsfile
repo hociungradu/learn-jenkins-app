@@ -20,5 +20,11 @@ pipeline {
                 '''
             }
         }
+        stage('Test') {
+            steps {
+                echo 'Testing that index.html exists in build folder ...'
+                sh 'test -f build/index.html'
+            }
+        }
     }
 }
